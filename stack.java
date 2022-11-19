@@ -11,7 +11,7 @@ class stack1
     
     if (top>=n-1) 
      {System.out.println("Overflow");
-     System.exit(0);
+    
      }
     else
      {
@@ -24,12 +24,25 @@ class stack1
     if (top==-1)
      {
       System.out.println("underflow");
-      System.exit(0);
+      
       }
      else
       {
        System.out.println("Deleted item"+a[top]);
        top=top-1;
+      }
+     }
+    void display(int n)
+     { if(top==-1)
+     {
+      System.out.println("stack empty");
+      }
+      else
+      {
+      for(int i=0;i<n;i++)
+        {
+         System.out.println(""+a[i]);
+         }
       }
      }
   }
@@ -38,11 +51,11 @@ class stack1
    public static void main(String args[])
     {Scanner obj=new Scanner(System.in);
     stack1 a= new stack1();
-    System.out.println("enter the size of array:");
+    System.out.println("enter the size of stack:");
     int n=obj.nextInt();
     while(true)
     {
-     System.out.println("1.)PUSH\n2.)POP\n3.)EXIT");
+     System.out.println("1.)PUSH\n2.)POP\n3.)DISPLAY\n4.)EXIT");
      int choice=obj.nextInt();
       switch(choice)
       {
@@ -54,7 +67,10 @@ class stack1
        case 2: { a.pop();
                 break;
                 }
-       case 3: {System.exit(0);}
+       case 3: { a.display(n);
+                break;}
+       case 4: { System.out.println("Exiting.....");
+                System.exit(0);}
       
        }
        }
